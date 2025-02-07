@@ -1,16 +1,23 @@
 export namespace Util {
-
-    export const createElement = ({name,attr}:createElementOptions):HTMLElement => {
-        const element = document.createElement(name);
-
-        if (typeof attr !=="undefined") {
-            let key: keyof typeof attr;
-            for (key in attr) {
-                const value = attr[key];
-                element.setAttribute(key, value);
-            }
+    /**
+     * HTML要素生成
+     * @param name     タグの名前
+     * @param attr     属性
+     * @returns HTMLElement オブジェクト
+     */
+    export const createElement = ({ name, attr }: createElementOptions): HTMLElement => {
+      // 空のHTML要素を生成
+      const element = document.createElement(name);
+      // 属性が指定されていれば追加
+      if (typeof attr !== "undefined") {
+        let key: keyof typeof attr;
+        for (key in attr) {
+          const value = attr[key];
+          element.setAttribute(key, value);
         }
-        return element;
+      }
+      // 生成した要素を返す
+      return element;
     };
 
 }

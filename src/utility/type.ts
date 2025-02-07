@@ -26,3 +26,12 @@ export type TextObjectParams = {
     fontSize:number;
     text:string;
 };
+
+export type MovableObjectParams = {
+    element:HTMLElement;
+    position:Point2D;
+    size:Size;
+    velocity:Point2D;
+    acceleration:Point2D;
+}
+
