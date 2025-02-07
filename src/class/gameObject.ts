@@ -1,4 +1,4 @@
-import { Point2D,Size, GameObjectParams } from "../utility/type";   // Importing the types from utility/type.ts
+import { Point2D,Size, GameObjectParams, TextObjectParams } from "../utility/type";   // Importing the types from utility/type.ts
 
 export default class GameObject {
     protected readonly _element: HTMLElement;

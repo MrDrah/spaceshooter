@@ -24,7 +24,7 @@ export type TextObjectParams = {
     position:Point2D;
     fontName:string;
     fontSize:number;
-    text:string;
+    text?:string;
 };
 
 export type MovableObjectParams = {
@@ -34,4 +34,13 @@ export type MovableObjectParams = {
     velocity:Point2D;
     acceleration:Point2D;
 }
+
+export type ScoreParams = Omit<TextObjectParams, "text"> & {
+  score: number;
+};
+
+export type LevelParams = Omit<TextObjectParams, "text"> & {
+    level: number;
+    };
+    
 

@@ -31,13 +31,12 @@ export default class TextObject extends GameObject implements IText {
         this._fontSize = params.fontSize;
         this._fontName = params.fontName;
         this._text = params.text ?? "";
-        
     }
+
     draw(): void {
         this.element.style.fontFamily = this.fontName;
         this.element.style.fontSize = this.fontSize.toString() + "px";
         this.element.innerText = this.text;
         super.draw();
-      }
-
+    }
 }
