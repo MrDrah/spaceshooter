@@ -1,5 +1,18 @@
 "use strict";
 import Screen from "./class/screen.js";
-$("body").css("color", "red");
-console.log(Screen.width);
-console.log(Screen.height);
+import { Util } from "./utility/util.js";
+import TextObject from "./class/textObject.js";
+// $("body").css("color", "red");
+// new Keyboard()
+const element = Util.createElement({
+    name: "img",
+    attr: { src: "./assets/images/player.png" }
+});
+const params = {
+    position: { x: 25, y: Screen.height - 25 },
+    fontName: "Bungee Inline",
+    fontSize: 40,
+    text: "Hello, World!"
+};
+const obj = new TextObject(params);
+obj.dispose();
