@@ -1,4 +1,4 @@
-import { Point2D,Size, GameObjectParams, TextObjectParams } from "../utility/type";   // Importing the types from utility/type.ts
+import { Point2D,Size, GameObjectParams } from "../utility/type"; 
 
 export default class GameObject {
     protected readonly _element: HTMLElement;
@@ -48,7 +48,6 @@ export default class GameObject {
       }
 
     update(): void {
-        // 要素を描画
         this.draw();
       }
 

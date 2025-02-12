@@ -1,9 +1,15 @@
-import GameObject from "./gameObject";
+import GameObject from "./gameObject.js";
 export default class MovableObject extends GameObject {
     _velocity;
     _acceleration;
+    /**
+     * アクセサ
+     */
     get velocity() {
         return this._velocity;
+    }
+    set velocity(velocity) {
+        this._velocity = velocity;
     }
     get acceleration() {
         return this._acceleration;
@@ -25,12 +31,12 @@ export default class MovableObject extends GameObject {
         this.velocity.y += this.acceleration.y;
     }
     stop() {
-        this.velocity.x = 0;
-        this.velocity.y = 0;
+        this.acceleration = { x: 0, y: 0 };
+        this.velocity = { x: 0, y: 0 };
     }
     update() {
-        this.move();
-        this.accelerate();
+        this.accelerate(); // 加速
+        this.move(); // 移動
         super.update();
     }
 }

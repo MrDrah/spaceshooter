@@ -1,17 +1,16 @@
-// Point 3d
+import Keyboard from "../class/keyboard.js";
+
 export type Point3D = {
     x:number;
     y:number;
     z:number;
 };
 
-// Point 3d
 export type Point2D = {
     x:number;
     y:number;
 };
 
-// Size
 export type Size = Omit<Point3D, "z">;
 
 export type GameObjectParams = {
@@ -41,6 +40,28 @@ export type ScoreParams = Omit<TextObjectParams, "text"> & {
 
 export type LevelParams = Omit<TextObjectParams, "text"> & {
     level: number;
-    };
-    
+};
+
+export type CometParams = Omit<MovableObjectParams,"element">;
+
+
+export type MeteoParams = Omit<MovableObjectParams,"element"> & {
+    power:number;
+}
+
+export type ShotParams = Omit<MovableObjectParams,"element"> & {
+    power:number;
+};
+
+export type PlayerParams = Omit<MovableObjectParams,"element" | "velocity" | "acceleration"> & {   
+    speed:number;
+    keyboard:Keyboard;
+};
+
+export type SaveData = {
+    level: number;
+    score: number;
+    shotInterval: number;
+    meteoInterval: number;
+  };
 

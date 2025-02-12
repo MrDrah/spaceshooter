@@ -1,15 +1,7 @@
-/**
- * Keyboardクラス
- */
 export default class Keyboard {
-    /**
-     * プロパティ
-     */
+
     protected _key: Record<string, boolean>;
   
-    /**
-     * アクセサ
-     */
     get up(): boolean {
       return this._key["ArrowUp"] === true || this._key["8"] === true;
     }
@@ -23,25 +15,19 @@ export default class Keyboard {
       return this._key["ArrowRight"] === true || this._key["6"] === true;
     }
   
-    /**
-     * コンストラクタ
-     */
     constructor() {
       this._key = {};
       this.watchEvent();
     }
   
-    /**
-     * イベント監視
-     */
     watchEvent(): void {
-      // keydownイベント
+
       document.addEventListener("keydown", (e: KeyboardEvent) => {
         this._key[e.key] = true;
         e.preventDefault();
         console.log(this._key);
       });
-      // keyupイベント
+
       document.addEventListener("keyup", (e: KeyboardEvent) => {
         this._key[e.key] = false;
         e.preventDefault();

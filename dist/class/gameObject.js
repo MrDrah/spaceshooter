@@ -37,7 +37,6 @@ export default class GameObject {
         this.element.style.opacity = "1";
     }
     update() {
-        // 要素を描画
         this.draw();
     }
     dispose() {
