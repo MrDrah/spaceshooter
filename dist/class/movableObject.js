@@ -2,9 +2,6 @@ import GameObject from "./gameObject.js";
 export default class MovableObject extends GameObject {
     _velocity;
     _acceleration;
-    /**
-     * アクセサ
-     */
     get velocity() {
         return this._velocity;
     }
@@ -35,8 +32,8 @@ export default class MovableObject extends GameObject {
         this.velocity = { x: 0, y: 0 };
     }
     update() {
-        this.accelerate(); // 加速
-        this.move(); // 移動
+        this.accelerate();
+        this.move();
         super.update();
     }
 }

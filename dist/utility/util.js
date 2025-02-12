@@ -29,14 +29,12 @@ export var Util;
         return Math.min(Math.floor(Math.pow(level, 1.3)), 1000);
     };
     Util.random = (min, max) => {
-        // minとmaxの間のランダムな数値
         return Math.random() * (max - min) + min;
     };
     Util.getMeteoPower = (level) => {
         return Math.min(Math.floor(Math.pow(level, 1.5)), 5000);
     };
     Util.getNextScore = (level) => {
-        // レベルが上がるごとに必要スコアが増えていく
         return Math.floor(Math.pow(level, 2) * 100);
     };
     Util.isOutsideScreen = (obj) => {
